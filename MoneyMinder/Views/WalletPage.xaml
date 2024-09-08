@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:MoneyMinder.Converters"
+             x:Class="MoneyMinder.Views.WalletPage"
+             Title="Wallet">
+    
+    <VerticalStackLayout>
+        <StackLayout>
+            <Grid BackgroundColor="White">
+                <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="150"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="100" />
+                        <RowDefinition Height="250" />
+                        <RowDefinition Height="250" />
+                        <RowDefinition Height="10" />
+                        <RowDefinition Height="25" />
+                </Grid.RowDefinitions>
+                    
+                    <Image Source="walletpage"
+                           Grid.Row="2" Grid.Column="2" HorizontalOptions="Center"
+                           WidthRequest="80"
+                           HeightRequest="80"/>
+                    <Label Text="{Binding Balance}" TextColor="Green"
+                           Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="2" HorizontalOptions="Center" Margin="-50,20,0,0"
+                           FontSize="20"/>
+
+
+                <Frame WidthRequest="300" HeightRequest="400" CornerRadius="15" 
+                       BackgroundColor="White" BorderColor="Black" Grid.ColumnSpan="3" Grid.RowSpan="4" Grid.Row="3" Grid.Column="1" HorizontalOptions="Center">
+                    <ScrollView>
+                        <VerticalStackLayout BindableLayout.ItemsSource="{Binding Wallets}">
+                            <BindableLayout.ItemTemplate>
+                                <DataTemplate>
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="{Binding Emote}" FontSize="20"/>
+                                        <Label Text="{Binding DisplayAmount}" FontSize="18" TextColor="{Binding Income, Converter={StaticResource IncomeOutcomeColorConverter}}"/>
+                                        <Label Text="{Binding Date, StringFormat='{}{0:d}'}" FontSize="13"/>
+                                        <Button Text="&#xe872;" FontFamily="mrr" FontSize="18" BackgroundColor="White" TextColor="Black" HorizontalOptions="EndAndExpand" VerticalOptions="End"
+                                                Clicked="DeleteButton_Clicked"
+                                                CommandParameter="{Binding ID}"/>
+                                    </StackLayout>
+                                </DataTemplate>
+                            </BindableLayout.ItemTemplate>
+                        </VerticalStackLayout>
+                    </ScrollView>
+                </Frame>
+
+                <Button WidthRequest="80" HeightRequest="80" CornerRadius="50"
+                            Grid.Row="6" Grid.Column="1" BackgroundColor="ForestGreen"
+                            Text="&#xe145;" FontFamily="mrr" FontSize="20"
+                            Clicked="Button_Clicked"/>
+                        
+                <Button WidthRequest="80" HeightRequest="80" CornerRadius="50" BackgroundColor="Red"
+                            Grid.Row="6" Grid.Column="3"
+                            Text="&#xe15b;" FontFamily="mrr" FontSize="20"
+                            Clicked="Button_Clicked_1"/>
+            </Grid>
+        </StackLayout>
+    </VerticalStackLayout>
+</ContentPage>

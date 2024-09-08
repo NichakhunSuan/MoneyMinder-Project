@@ -1,0 +1,10 @@
+﻿<Application xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:MoneyMinder.Converters"
+             x:Class="MoneyMinder.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <local:IncomeOutcomeColorConverter x:Key="IncomeOutcomeColorConverter"/>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

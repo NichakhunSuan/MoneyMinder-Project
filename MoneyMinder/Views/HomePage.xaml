@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MoneyMinder.Views.HomePage"
+             Title="Home">
+
+    <VerticalStackLayout>
+        <StackLayout>
+            <Image Source="pot"
+                   WidthRequest="200"
+                   HeightRequest="200"/>
+            <Label Text="Saving pot"
+                   FontSize="24"
+                   HorizontalOptions="Center"/>
+            <Label x:Name="PotMoneyLabel" Text="Pot Money: 0 BATH" FontSize="Large" HorizontalOptions="Center" VerticalOptions="CenterAndExpand"/>
+        </StackLayout>
+
+        <Frame BackgroundColor="LightYellow" BorderColor="Black" CornerRadius="1" Padding="2" Margin="28,30,28,20"
+               WidthRequest="330" HeightRequest="100" >
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding OpenUrlCommand}"
+                                      CommandParameter="https://www.setinvestnow.com/th/knowledge/article/84-tsi-10-outstanding-short-term-bond-funds-during-increasing-interest-rate-time"/>
+            </Frame.GestureRecognizers>
+            <Label Text="กองทุนระยะสั้น คลิก!"
+                   FontSize="20" HorizontalOptions="Center" VerticalOptions="Center"/>
+        </Frame>
+        
+        <Frame BackgroundColor="LightYellow" BorderColor="Black" CornerRadius="1" Padding="2" Margin="28,30,28,20"
+               WidthRequest="330" HeightRequest="100">
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding OpenUrlCommand}"
+                                      CommandParameter="https://www.wealthmagik.com/fund/topchart"/>
+            </Frame.GestureRecognizers>
+            <Label Text="กองทุนระยะยาว คลิก!"
+                   FontSize="20" HorizontalOptions="Center" VerticalOptions="Center"/>
+        </Frame>
+
+        <Frame BackgroundColor="LightYellow" BorderColor="Black" CornerRadius="1" Padding="2" Margin="28,30,28,20"
+               WidthRequest="330" HeightRequest="100" >
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding OpenUrlCommand}"
+                                      CommandParameter="https://www.finnomena.com/dekfinance/1-thb-funds/"/>
+            </Frame.GestureRecognizers>
+            <Label Text="กองทุนระยะต่างประเทศ คลิก!"
+                   FontSize="20" HorizontalOptions="Center" VerticalOptions="Center"/>
+        </Frame>
+    </VerticalStackLayout>
+</ContentPage>

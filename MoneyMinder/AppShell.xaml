@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="MoneyMinder.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:MoneyMinder.Views"
+    Shell.ForegroundColor="White"
+    Shell.TabBarIsVisible="False"
+    Shell.FlyoutBehavior="Flyout">
+    
+    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
+        <ShellContent
+            Title="Home"
+            Icon="home"
+            ContentTemplate="{DataTemplate local:HomePage}"
+            Route="HomePage"/>
+
+        <ShellContent
+            Title="Wallet"
+            Icon="wallet"
+            ContentTemplate="{DataTemplate local:WalletPage}"
+            Route="WalletPage" />
+
+        <ShellContent
+            Title="Saving goals"
+            Icon="savingpot"
+            ContentTemplate="{DataTemplate local:SavingsPage}"
+            Route="SavingPage" />
+
+        <ShellContent
+            Title="Expense summary"
+            Icon="expense"
+            ContentTemplate="{DataTemplate local:SummaryPage}"
+            Route="SummaryPage" />
+    </FlyoutItem>
+</Shell>

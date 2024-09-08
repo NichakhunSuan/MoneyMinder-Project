@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MoneyMinder.Views.SummaryPage"
+             Title="Expense Summary">
+
+    <ScrollView>
+        <VerticalStackLayout>
+            <Label Text="Monthly Summary" FontSize="20" FontAttributes="Bold" Margin="10"/>
+            <CollectionView ItemsSource="{Binding MonthlySummaries}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="{Binding Month}" FontSize="18" WidthRequest="100"/>
+                            <Label Text="{Binding TotalIncome, StringFormat='{0:N0} BATH'}" FontSize="18" TextColor="Green" WidthRequest="100"/>
+                            <Label Text="{Binding TotalOutcome, StringFormat='{0:N0} BATH'}" FontSize="18" TextColor="Red" WidthRequest="100"/>
+                            <Label Text="{Binding Balance, StringFormat='{0:N0} BATH'}" FontSize="18" WidthRequest="100"/>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <Label Text="Yearly Summary" FontSize="20" FontAttributes="Bold" Margin="10,20,10,10"/>
+            <CollectionView ItemsSource="{Binding YearlySummaries}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="{Binding Year}" FontSize="18" WidthRequest="100"/>
+                            <Label Text="{Binding TotalIncome, StringFormat='{0:N0} BATH'}" FontSize="18" TextColor="Green" WidthRequest="100"/>
+                            <Label Text="{Binding TotalOutcome, StringFormat='{0:N0} BATH'}" FontSize="18" TextColor="Red" WidthRequest="100"/>
+                            <Label Text="{Binding Balance, StringFormat='{0:N0} BATH'}" FontSize="18" WidthRequest="100"/>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

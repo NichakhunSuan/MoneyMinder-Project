@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MoneyMinder.Views.SavingsPage"
+             Title="Savings goals">
+
+    <VerticalStackLayout>
+        <StackLayout>
+            <Grid BackgroundColor="White">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="150"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="100" />
+                    <RowDefinition Height="250" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <Image Source="pot"
+                       Grid.Row="2" Grid.Column="2" HorizontalOptions="Center"
+                       WidthRequest="150"
+                       HeightRequest="150"/>
+
+                <Button WidthRequest="130" HeightRequest="30" Text="&#xe145;" FontSize="12" FontAttributes="Bold" FontFamily="mrr" TextColor="Black" Clicked="Button_Clicked"
+                        Grid.Row="4" CornerRadius="1" Grid.Column="2" HorizontalOptions="Center" BorderColor="Black" BorderWidth="1" BackgroundColor="White"/>
+
+                <Frame WidthRequest="300" HeightRequest="350" CornerRadius="15" 
+                       BackgroundColor="White" BorderColor="Black" Grid.ColumnSpan="3" Grid.RowSpan="3" 
+                       Grid.Row="5" Grid.Column="1" HorizontalOptions="Center">
+                    <ScrollView>
+                        <StackLayout x:Name="info">
+
+                        </StackLayout>
+                    </ScrollView>
+                </Frame>
+            </Grid>
+        </StackLayout>
+    </VerticalStackLayout>
+</ContentPage>

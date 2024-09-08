@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<mct:Popup xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:mct="clr-namespace:CommunityToolkit.Maui.Views;assembly=CommunityToolkit.Maui"
+             x:Class="MoneyMinder.PopupOutcome">
+
+    <VerticalStackLayout>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="5"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="40"/>
+                <ColumnDefinition Width="40"/>
+                <ColumnDefinition Width="40"/>
+                <ColumnDefinition Width="40"/>
+                <ColumnDefinition Width="40"/>
+                <ColumnDefinition Width="40"/>
+                <ColumnDefinition Width="25"/>
+                <ColumnDefinition Width="18"/>
+                <ColumnDefinition Width="25"/>
+                <ColumnDefinition Width="35"/>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition Width="15"/>
+                <ColumnDefinition Width="25"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Column="0" Grid.Row="0" Background="DarkRed" Grid.ColumnSpan="13" Text="   Outcome" TextColor="White" FontSize="18"/>
+
+            <Frame Grid.Row="3" Grid.Column="1" CornerRadius="1" WidthRequest="80" HeightRequest="80" BorderColor="Black">
+                <Picker x:Name="currencyPicker" Title="🚖" FontSize="22" WidthRequest="40" HeightRequest="80" HorizontalOptions="Center" VerticalOptions="Center">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>🍱</x:String>
+                            <x:String>🚖</x:String>
+                            <x:String>🧾</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+            </Frame>
+
+            <Frame Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="4" BorderColor="Black" Padding="5">
+                <Editor x:Name="outcomeEntryField" Placeholder="00.00 BATH" MaxLength="7" HeightRequest="42"
+                   Background="White" TextColor="Red" Keyboard="Numeric"/>
+            </Frame>
+
+            <Frame BorderColor="Black" Grid.Row="2" Grid.Column="8" WidthRequest="50" HeightRequest="50"  Padding="5">
+                <Label TextColor="Green" HorizontalOptions="Center" VerticalOptions="Center" FontSize="14" FontFamily="mrr" FontAttributes="Bold"
+                   Text="BATH"/>
+            </Frame>
+
+            <Frame BackgroundColor="White" Grid.Row="4" Grid.Column="3" Grid.ColumnSpan="4" BorderColor="Black" Padding="5">
+                <Editor x:Name="detailEntryField" Placeholder="Detail . . ." HeightRequest="42" MaxLength="20" Background="White" TextColor="Black"/>
+            </Frame>
+
+            <StackLayout Grid.Column="9" Grid.Row="0">
+                <ImageButton Source="done"
+                         Clicked="Done_Clicked" WidthRequest="25" HeightRequest="25" CornerRadius="15" BackgroundColor="Green">
+                </ImageButton>
+            </StackLayout>
+            <StackLayout Grid.Column="11" Grid.Row="0">
+                <ImageButton Source="cancel"
+                             Clicked="Cancel_Clicked" WidthRequest="25" HeightRequest="25" CornerRadius="15" BackgroundColor="Red">
+                </ImageButton>
+            </StackLayout>
+        </Grid>
+    </VerticalStackLayout>
+</mct:Popup>
